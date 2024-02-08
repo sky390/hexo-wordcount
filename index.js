@@ -18,9 +18,9 @@ hexo.extend.helper.register('wordcount', function (content) {
   var len = counter(content);
   var count = len[0] + len[1];
   if (count < 1000) {
-    return count;
+    return count + ' 字';
   }
-  return Math.round(count / 100) / 10 + 'k';
+  return '约 ' + Math.round(count / 100) / 10 + ' 千字';
 });
 
 hexo.extend.helper.register('totalcount', function (site) {
@@ -30,7 +30,7 @@ hexo.extend.helper.register('totalcount', function (site) {
     count += len[0] + len[1];
   });
   if (count < 1000) {
-    return count;
+    return count + ' 字';
   }
-  return Math.round(count / 100) / 10 + 'k';
+  return '约 ' + Math.round(count / 100) / 10 + ' 千字';
 });
